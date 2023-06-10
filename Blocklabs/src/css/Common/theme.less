@@ -1,0 +1,88 @@
+﻿@import "variable.less";
+
+html {
+    scroll-behavior: smooth;
+}
+img {
+    pointer-events: none;
+    width: 100%;
+}
+
+body {
+    header {
+        transition:all var(--duration);
+        > div {
+            padding-inline: 20px;
+            max-width: var(--maxWidth);
+            margin-inline: auto;
+        }
+    }
+
+    main {
+        margin-top: var(--headerHeight);
+        h2, h1 {
+            font-family: "Playfair Display",sans-serif;
+        }
+
+        section {
+
+            > article {
+                overflow: visible !important;
+            }
+        }
+    }
+
+    .--button {
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 150px;
+        font-size: 1rem;
+        width: fit-content;
+        border-radius: var(--raduis);
+        background-color: transparent;
+        border: 1px solid var(--primaryColor);
+        color: var(--primaryColor);
+        transition: all var(--duration);
+
+        &:hover {
+            background-color: var(--primaryColor);
+            color: var(--whiteColor);
+        }
+
+        &._primary {
+            background-color: var(--primaryColor);
+            color: var(--whiteColor);
+
+            &:hover {
+                color: var(--primaryColor);
+                background-color: transparent;
+            }
+        }
+
+        &._secondary {
+            background-color: var(--secondaryColor);
+            color: var(--whiteColor);
+            border-color: var(--secondaryColor);
+
+            &:hover {
+                color: var(--secondaryColor);
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+._noscroll {
+    overflow: hidden;
+}
+
+._scroll{
+    .header{
+        height:100px;
+        &-logo{
+            max-width:150px;
+        }
+    }
+}

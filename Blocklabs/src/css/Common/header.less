@@ -1,0 +1,348 @@
+﻿@import url('https://cdn.amcapi.com/cloudweb/1.0.2/cloud-header.less');
+@import "variable.less";
+
+body {
+    .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: var(--headerbgColor);
+        height: var(--headerHeight);
+        padding: 10px 15px;
+        z-index: 99999;
+
+        > article {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: var(--maxWidth);
+            margin-inline: auto;
+        }
+
+        &-logo {
+            max-width: 150px;
+            transition: all var(--duration);
+
+            img {
+                width: 100%;
+                height:100%;
+                object-fit: contain;
+            }
+        }
+
+        .menu {
+            display: block;
+            position: relative;
+            background-color: transparent;
+            cursor: pointer;
+            padding: 5px 5px;
+            margin-right: 20px;
+
+
+            span {
+                position: relative;
+                display: block;
+                background: var(--primaryColor);
+                width: 25px;
+                height: 0;
+                margin: 5px 0;
+                border: 1.5px solid var(--primaryColor);
+            }
+        }
+
+        &-menu {
+            align-items: center;
+            justify-content: flex-end;
+            gap: 20px;
+            width: 100%;
+            display: none;
+
+            li {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                line-height: normal;
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+                a {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    line-height: 28px;
+                    padding: 5px;
+                }
+            }
+        }
+    }
+
+    .sidebar {
+        z-index: 99999999;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        padding: 0;
+        margin: 0;
+        max-width: 85vw;
+        justify-content: flex-start;
+
+        .sidebar-void {
+            display: none;
+        }
+
+        .sidebar-load {
+            max-width: 100%;
+            width: 100%;
+            background: white;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .sidebar-header {
+            height: 70px !important;
+            place-self: end;
+            align-items: end;
+            margin-right: 20px;
+
+            > div > div {
+                padding: 0;
+
+                svg {
+                    height: 50px !important;
+                    cursor: pointer;
+
+                    line {
+                        stroke: var(--primaryColor) !important;
+                    }
+                }
+            }
+        }
+
+        .sidebar-content {
+            flex: initial;
+            width: 100%;
+            height: 100%;
+            background: var(--whiteColor);
+
+            > div {
+                height: auto;
+
+                nav {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    align-items: center;
+                    margin-inline: auto;
+                    max-width: var(--maxWidth);
+
+                    ul {
+                        padding: 0;
+
+                        li {
+                            width: fit-content;
+                            list-style: none;
+                            text-align: center;
+                            padding: .5rem !important;
+                            width: 100% !important;
+
+                            a {
+                                text-align: center !important;
+                                position: relative !important;
+                                width: 100%;
+                                display: flex;
+                                justify-content: center;
+                                padding-bottom: 10px;
+                                font-size: 1.5rem;
+                                font-weight: 900;
+                                text-decoration: none;
+                                color: var(--primaryColor);
+                                transition: all var(--duration);
+
+                                &:hover, &._active {
+                                    color: var(--secondaryColor) !important;
+                                }
+                            }
+
+                            .--button {
+                                max-width: 200px;
+                                margin-inline: auto;
+                                color: var(--whiteColor);
+                                font-size: 1.5rem;
+                            }
+                        }
+                    }
+
+                    > div {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 10px;
+                        width: 100%;
+                        padding: 10px;
+
+                        .information {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 30px;
+                            align-items: center;
+
+                            > div {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+                                align-items: center;
+                                align-content: center;
+                                width: 100%;
+
+                                p {
+                                    font-size: 1rem;
+                                    font-weight: bold;
+                                    text-transform: uppercase;
+                                    color: var(--whiteColor);
+                                    margin: 0;
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 10px;
+                                    width: 100%;
+                                    display: block;
+                                    text-align: center;
+                                }
+
+                                svg {
+                                    width: 25px;
+                                    fill: var(--whiteColor);
+                                    transition: all var(--duration);
+
+
+                                    .--svg-fill {
+                                        fill: var(--whiteColor);
+                                        transition: all var(--duration);
+                                    }
+                                }
+
+                                a {
+                                    display: flex;
+                                    align-items: center;
+                                    padding: 5px;
+                                    justify-content: center;
+                                    gap: 10px;
+                                    transition: all var(--duration);
+                                    width: 100%;
+                                    text-align: center;
+                                    font-size: 1rem;
+                                    color: var(--whiteColor);
+                                    transition: all var(--duration);
+                                    text-align: center;
+
+                                    span {
+                                        font-size: 1rem;
+                                        color: var(--whiteColor);
+                                        transition: all var(--duration);
+                                        text-align: center;
+                                    }
+
+                                    &:hover {
+                                        color: var(--secondaryColor);
+
+                                        svg {
+                                            fill: var(--secondaryColor);
+
+                                            .--svg-fill {
+                                                fill: var(--secondaryColor);
+                                            }
+                                        }
+
+                                        span {
+                                            color: var(--secondaryColor);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .social {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 10px;
+                            align-self: center;
+
+                            a {
+                                padding: 5px;
+                                width: fit-content;
+                                transition: all var(--duration);
+
+                                svg {
+                                    width: 50px;
+                                    transition: all var(--duration);
+
+                                    .--svg-fill-background {
+                                        fill: none;
+                                        stroke: var(--whiteColor);
+                                        transition: all var(--duration);
+                                    }
+
+                                    .--svg-fill {
+                                        fill: var(--whiteColor);
+                                        transition: all .2s ease-in-out;
+                                    }
+                                }
+
+                                &:hover {
+                                    svg {
+                                        transform: translateY(-5px);
+
+                                        .--svg-fill-background {
+                                            fill: var(--secondaryColor);
+                                            stroke: var(--secondaryColor);
+                                        }
+
+                                        .--svg-fill {
+                                            fill: var(--whiteColor);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    body {
+        .sidebar {
+            max-width: 450px !important;
+        }
+    }
+}
+
+@media @break-large {
+
+    body {
+        --headerHeight: 140px;
+
+        .header {
+            > article {
+                justify-content: center;
+            }
+
+            &-logo {
+                max-width: 250px;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            &-menu {
+                display: flex;
+            }
+        }
+
+        .sidebar{
+            display:none;
+        }
+    }
+}

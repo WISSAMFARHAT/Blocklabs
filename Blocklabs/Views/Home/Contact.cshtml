@@ -1,0 +1,57 @@
+﻿@{
+    Html.Bundle("css/contact.css");
+    Html.Bundle("js/contact.js");
+}
+
+<section class="contact">
+    <article>
+        <h2 class="fadeout">
+            Contact Us
+        </h2>
+        <p class="fadeout">
+            Please get in touch with us. It would be great to hear from you!
+        </p>
+        <div class="contact-form">
+            <div class="fadein">
+                <span>
+                    Your Name
+                </span>
+                <input type="text" placeholder="Cooper George" name="name" />
+            </div>
+            <div class="fadein">
+                <span>
+                    Company (optional)
+                </span>
+                <input type="text" placeholder="MaximaIT" name="comapny" />
+            </div>
+            <div class="fadein">
+                <span>
+                    Email
+                </span>
+                <input type="text"  placeholder="example@gmail.com" name="email" />
+            </div>
+            <div class="fadein">
+                <span>
+                    Phone
+                </span>
+                <input type="text" placeholder="+88 0123456789" name="phone" />
+            </div>
+            <div class="expand fadein">
+                <span>
+                    Message
+                </span>
+                <textarea name="message" placeholder="Your message here"></textarea>
+            </div>
+        </div>
+        <div class="contact-submit">
+            <span class="error"></span>
+            <button class="--button _secondary fade-right" id="submit">
+                <p>Send Message</p>
+            </button>
+        </div>
+        <div class="contact-svg">
+            <partial name="Assets/Mail" />
+            <span>We recive your email</span>
+        </div>
+    </article>
+</section>

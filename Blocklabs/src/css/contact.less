@@ -1,0 +1,175 @@
+@import 'Common/variable.less';
+
+:root{
+    --headerbgColor:#fff;
+}
+
+body {
+    main {
+        .contact {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+
+            h2 {
+                font-size: 2rem;
+                color: var(--blackColor);
+                font-weight: 600;
+                text-align: center;
+            }
+
+            p {
+                font-size: 1rem;
+                color: var(--blackColor);
+                text-align: center;
+            }
+
+            &-form {
+                margin-block: 50px;
+                display: grid;
+                grid-template-columns: repeat(1,1fr);
+                align-items: stretch;
+                gap: 30px 50px;
+                transition: all var(--duration);
+
+                > div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    width: 100%;
+                    gap: 5px;
+
+                    span {
+                        font-size: .8rem;
+                        margin: 0;
+                        color: #2C2E33;
+                    }
+
+                    input {
+                        width: 100%;
+                        outline: none;
+                        background: #F6F6F6;
+                        border: 1px solid #EDEDED;
+                        border-radius: 5px;
+                        color: #2C2E33;
+                        padding: 1rem 1rem;
+                        transition: all .3s;
+
+                        &._invalid {
+                            border-color: red;
+                        }
+                    }
+
+                    textarea {
+                        height: 200px;
+                        width: 100%;
+                        outline: none;
+                        background: #F6F6F6;
+                        border: 1px solid #EDEDED;
+                        border-radius: 5px;
+                        color: #2C2E33;
+                        padding: 0.5rem 1rem;
+                        transition: all .3s;
+
+                        &._invalid {
+                            border-color: red;
+                        }
+                    }
+                }
+
+                .expand {
+                    grid-column-start: 1;
+                    grid-column-end: 2;
+                }
+            }
+
+            &-submit {
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-end;
+
+                span {
+                    color: red;
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+
+                .--button {
+                    max-width: 200px;
+                    width: 100%;
+                    cursor: pointer;
+                    padding: 15px 5px;
+
+                    p {
+                        color: var(--whiteColor);
+                        transition: all var(--duration);
+                        margin: 0;
+                    }
+
+                    &:hover {
+                        p {
+                            color: var(--secondaryColor);
+                        }
+                    }
+                }
+            }
+
+            &-svg {
+                display: none;
+                transition: all var(--duration);
+                opacity: 0;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                margin-block: 80px 50px;
+
+                svg {
+                    width: 100px;
+                    height: 100px;
+
+                    path {
+                        fill: var(--primaryColor);
+                    }
+                }
+
+                span {
+                    font-size: 2rem;
+                    color: var(--primaryColor);
+                    text-align:center;
+                }
+            }
+
+            &._done {
+                .contact {
+                    &-form, &-submit {
+                        display: none;
+                    }
+                    &-svg{
+                        display:flex;
+                        opacity:1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media @break-medium
+{
+    body {
+        main {
+            .contact {
+                &-form {
+                    grid-template-columns: repeat(2,1fr);
+
+                    .expand {
+                        grid-column-start: 1;
+                        grid-column-end: 3;
+                    }
+                }
+            }
+        }
+    }
+}
